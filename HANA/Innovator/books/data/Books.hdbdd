@@ -1,0 +1,10 @@
+namespace Innovator.books.data;
+@Schema : 'I859342'
+@Catalog.tableType : #COLUMN
+@Catalog.index : [ { name : 'MYINDEX1', unique : true, order :#DESC, elementNames : ['ISBN'] } ] 
+entity Books {
+  key Author    : String(100);
+  key BookTitle : String(100);
+      ISBN      : Integer not null;
+      Publisher : String(100);
+};

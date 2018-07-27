@@ -1,0 +1,3 @@
+service {
+    "Innovator.books.data::Books" as "books";
+}
