@@ -3,8 +3,9 @@ namespace Innovator.books.data;
 @Catalog.tableType : #COLUMN
 @Catalog.index : [ { name : 'MYINDEX1', unique : true, order :#DESC, elementNames : ['ISBN'] } ] 
 entity Books {
-  key Author    : String(100);
-  key BookTitle : String(100);
+  key Id        : String(25);
+      Author    : String(100);
+      BookTitle : String(100);
       ISBN      : Integer not null;
       Publisher : String(100);
 };
