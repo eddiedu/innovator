@@ -1,0 +1,11 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="Innovator.books.services.api">
+			<EntityType Name="booksType">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="25"/><Property Name="Author" Type="Edm.String" MaxLength="100"/><Property Name="BookTitle" Type="Edm.String" MaxLength="100"/><Property Name="ISBN" Type="Edm.Int32" Nullable="false"/><Property Name="Publisher" Type="Edm.String" MaxLength="100"/></EntityType>
+			<EntityContainer Name="api" m:IsDefaultEntityContainer="true"><EntitySet Name="books" EntityType="Innovator.books.services.api.booksType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

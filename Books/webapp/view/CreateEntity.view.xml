@@ -1,0 +1,36 @@
+<mvc:View controllerName="innovator.books.Books.controller.CreateEntity" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:smart="sap.ui.comp.smartfield" xmlns="sap.m">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" title="{viewModel>/viewTitle}" busy="{viewModel>/busy}">
+		<semantic:content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" id="newEntitySimpleForm"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024"
+				title="{= ${viewModel>/mode} === 'edit'? 'Edit Innovator.books.services.api.booksType': 'New Innovator.books.services.api.booksType'}">
+				<f:content>
+					<Label text="Id" required="true"/>
+					<Input name="Id" id="Id_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement"
+						enabled="{= ${viewModel>/mode} === 'edit'? false: true}" visible="true"
+						value="{ path: 'Id', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:25, nullable:false } }"/>
+					<Label text="Author" required="false"/>
+					<Input name="Author" id="Author_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'Author', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:100 } }"/>
+					<Label text="BookTitle" required="false"/>
+					<Input name="BookTitle" id="BookTitle_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'BookTitle', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:100 } }"/>
+					<Label text="ISBN" required="true"/>
+					<Input name="ISBN" id="ISBN_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'ISBN', type: 'sap.ui.model.odata.type.Int32' , constraints:{ nullable:false } }"/>
+					<Label text="Publisher" required="false"/>
+					<Input name="Publisher" id="Publisher_id" valueLiveUpdate="true" liveChange="_validateSaveEnablement" enabled="true" visible="true"
+						value="{ path: 'Publisher', type: 'sap.ui.model.odata.type.String' , constraints:{ maxLength:100 } }"/>
+				</f:content>
+			</f:SimpleForm>
+		</semantic:content>
+		<semantic:saveAction>
+			<semantic:SaveAction id="save" enabled="{viewModel>/enableCreate}" press="onSave"/>
+		</semantic:saveAction>
+		<semantic:cancelAction>
+			<semantic:CancelAction id="cancel" press="onCancel"></semantic:CancelAction>
+		</semantic:cancelAction>
+	</semantic:DetailPage>
+</mvc:View>

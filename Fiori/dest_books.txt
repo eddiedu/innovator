@@ -1,0 +1,11 @@
+#Password=<< Existing password/certificate removed on export >>
+#
+#Fri Jul 27 21:50:48 UTC 2018
+Description=Books Destination
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_gen
+Name=app_accelerator
+WebIDEEnabled=True
+URL=https\://hanadblaci1355a05c4.us2.hana.ondemand.com/Innovator/books/services/ProxyType=Internet
+User=i859342
